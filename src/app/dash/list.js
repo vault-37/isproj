@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
+import "./dash.css";
 
 function MotorDropdown({foo}) {
   const [motorList, setMotorList] = useState([]);
@@ -28,8 +29,8 @@ function MotorDropdown({foo}) {
   }, []);
 
   return (
-    <div>
-      <label htmlFor="motorSelect">Select a motor:</label>
+    <div className="graph-dropdown">
+      {/* <label htmlFor="motorSelect">Select a motor:</label> */}
       <select
         id="motorSelect"
         className="block bg-black text-white p-2 rounded-md"

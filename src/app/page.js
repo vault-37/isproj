@@ -1,5 +1,6 @@
 import Image from "next/image";
 import LoginButton from "./LoginButton";
+import HelpButton from "./HelpButton";
 export default function Home() {
   return (
     <>
@@ -7,7 +8,10 @@ export default function Home() {
         <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
           GAIL Project
         </h2>
-      <LoginButton />
+        <div className="flex flex-row justify-around justify-center items-center ">
+          <LoginButton />
+          <HelpButton />
+        </div>
       </div>
     </>
   );

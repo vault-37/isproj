@@ -16,7 +16,8 @@
     "plotly.js-dist-min": "^2.29.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-plotly.js": "^2.6.0"
+    "react-plotly.js": "^2.6.0",
+    "recharts": "^2.12.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

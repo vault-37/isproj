@@ -1,0 +1,31 @@
+.dashboard-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.graph-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* gap: 20px; */
+}
+.graph-btns {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.graph-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px white;
+  border-radius: 5px;
+}
+.g2-cont
+{
+    width: 100vw;
+}

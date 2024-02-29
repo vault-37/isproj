@@ -1,8 +1,10 @@
-"use client"
+"use client";
 
 import { useState } from "react";
+import MotorDataGraph from "./g2";
+import "./dash.css";
 
-function YourComponent({motor_id}) {
+function YourComponent({ motor_id }) {
   const [rows, setRows] = useState(null);
 
   async function fetchRows() {
@@ -24,21 +26,28 @@ function YourComponent({motor_id}) {
       console.error("Error fetching last row:", error);
     }
   }
-
+  async function hc(){
+    
+  }
+ 
   return (
-    <div>
-      <button onClick={fetchRows}>Fetch Rows</button>
-      <div>
-        {rows &&
-          rows.map((r) => (
-            <div>
-              <p>ID: {r.motor_id}</p>
-              <p>timestamp: {r.timestamp}</p>
-              <p>current_value: {r.current_value}</p>
-              <p>frequency: {r.frequency}</p>
-            </div>
-          ))}
+    <div className="graph-content">
+      <div className="graph-btns">
+
+      <button
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        onClick={fetchRows}
+      >
+        Fetch Rows
+      </button>
+      <button
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        onClick={() => console.log("Hello")}
+      >
+        Create report
+      </button>
       </div>
+      <div>{rows && <MotorDataGraph rows={rows} />}</div>
     </div>
   );
 }
