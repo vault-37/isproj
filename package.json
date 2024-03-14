@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-beta.39",
     "axios": "^1.6.7",
     "dotenv": "^16.4.5",
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.1",
     "next": "14.1.0",
+    "pdf-lib": "^1.17.1",
     "pg": "^8.11.3",
     "plotly.js-dist-min": "^2.29.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-loader-spinner": "^6.1.6",
     "react-plotly.js": "^2.6.0",
     "recharts": "^2.12.1"
   },

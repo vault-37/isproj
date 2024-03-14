@@ -13,7 +13,7 @@ export async function GET() {
     const pool = new Pool(dbobj);
     const client = await pool.connect();
     const result = await client.query(
-      `SELECT motor_id 
+      `SELECT * 
             FROM motor_details;`
     );
     const res = result.rows;

@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -9,7 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./dash.css"
+import "./dash.css";
 
 const MotorDataGraph = ({ rows }) => {
   // Extracting timestamps and current values from motorData
@@ -43,7 +42,12 @@ const MotorDataGraph = ({ rows }) => {
             />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="currentValue" stroke="#ff7f0e" />
+            <Line
+              type="monotone"
+              dataKey="currentValue"
+              stroke="#4CAF50"
+              strokeWidth={2}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>
@@ -69,7 +73,12 @@ const MotorDataGraph = ({ rows }) => {
             />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="frequency" stroke="#1f77b4" />
+            <Line
+              type="monotone"
+              dataKey="frequency"
+              stroke="#2196F3"
+              strokeWidth={2}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

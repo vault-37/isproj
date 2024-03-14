@@ -89,7 +89,7 @@ function YourComponent({ motor_id }) {
 
     doc.save("motor_data_with_stats.pdf");
     // Automatically open the print dialog after saving the PDF
-    doc.autoPrint();
+    // doc.autoPrint();
     doc.output("dataurlnewwindow");
   };
 
