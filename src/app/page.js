@@ -1,6 +1,7 @@
 import Image from "next/image";
 import LoginButton from "./LoginButton";
 import HelpButton from "./HelpButton";
+// import Wrapper from "./wrapper";
 export default function Home() {
   return (
     <>

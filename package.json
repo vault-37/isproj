@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@mui/base": "^5.0.0-beta.39",
+    "@mui/icons-material": "^5.15.13",
     "axios": "^1.6.7",
     "dotenv": "^16.4.5",
     "html2pdf.js": "^0.10.1",
@@ -22,7 +25,8 @@
     "react-dom": "^18",
     "react-loader-spinner": "^6.1.6",
     "react-plotly.js": "^2.6.0",
-    "recharts": "^2.12.1"
+    "recharts": "^2.12.1",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

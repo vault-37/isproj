@@ -13,7 +13,7 @@ const dashboard = () => {
   return (
     <>
       <div className="relative">
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="absolute top-full left-0 right-0 shadow-md z-10">
           <div className="container mx-auto px-4 py-6">
             <h2 className="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
