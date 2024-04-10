@@ -1,15 +1,53 @@
 "use client"
-import React from "react";
+import { useState } from "react";
 
+async function addMotor(motorData) {
+  try {
+    const response = await fetch("http://localhost:8000/api/motor/add-motor/", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTI4IiwiZXhwIjoxNzEzMzE0NzU5fQ.jPcLcoZTXtxNZ6qx43ZV3mOWiGI_Fp0_RShAAFHqhrw",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(motorData),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Motor added successfully:", data);
+      alert(data.message);
+      // Do something with the response if needed
+    } else {
+      console.error("Failed to add motor:", response.statusText);
+    }
+  } catch (error) {
+    console.error("Error adding motor:", error);
+  }
+}
 
 function AddMotorForm() {
+  const [motorID, setMotorID] = useState("");
+  const [powerRating, setPowerRating] = useState("");
+  const [location, setLocation] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const motorData = {
+      motor_id: motorID,
+      power_rating: powerRating,
+      location: location,
+    };
+    await addMotor(motorData);
+  };
+
   return (
     <section className="bg-white dark:bg-gray-900 h-screen">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
           Add a new Motor
         </h2>
-        <form action="#">
+        <form onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div className="sm:col-span-2">
               <label
@@ -22,9 +60,11 @@ function AddMotorForm() {
                 type="text"
                 name="motorID"
                 id="motorID"
+                value={motorID}
+                onChange={(e) => setMotorID(e.target.value)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Type motor ID"
-                required=""
+                required
               />
             </div>
             <div className="w-full">
@@ -38,9 +78,11 @@ function AddMotorForm() {
                 type="text"
                 name="powerRating"
                 id="powerRating"
+                value={powerRating}
+                onChange={(e) => setPowerRating(e.target.value)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Motor power rating"
-                required=""
+                required
               />
             </div>
             <div className="w-full">
@@ -54,9 +96,11 @@ function AddMotorForm() {
                 type="text"
                 name="location"
                 id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Motor location"
-                required=""
+                required
               />
             </div>
           </div>
