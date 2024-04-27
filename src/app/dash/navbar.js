@@ -92,7 +92,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href="http://localhost:3001/"
+                href="/help"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
                 Help
