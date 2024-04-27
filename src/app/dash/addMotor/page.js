@@ -3,12 +3,13 @@ import { useState } from "react";
 
 async function addMotor(motorData) {
   try {
+    const token = localStorage.getItem("authToken");
     const response = await fetch("http://localhost:8000/api/motor/add-motor/", {
       method: "POST",
       headers: {
         accept: "application/json",
         token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTI4IiwiZXhwIjoxNzEzMzE0NzU5fQ.jPcLcoZTXtxNZ6qx43ZV3mOWiGI_Fp0_RShAAFHqhrw",
+          token,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(motorData),

@@ -9,7 +9,7 @@ import BlogCard from "./Card";
 
 const dashboard = () => {
   const [motor_id,setmotor_id] = useState();
-  const [user, setuser] = useState("Admin");
+  const [user, setuser] = useState("User"+localStorage.getItem("userId"));
   return (
     <>
       <div className="relative">

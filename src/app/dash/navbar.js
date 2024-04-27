@@ -1,20 +1,31 @@
+"use client"
 import { useState } from "react";
 import Gaillogo from "../../../public/images/gail.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-function Navbar() {
+function Navbar({isLogin}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userId");
+  }
+  const logout = () => {
+    handleLogout();
+    router.push("/auth/login");
+  }
 
   return (
     <nav className="border-gray-200 bg-[#fed7aa]">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a
-          href="https://flowbite.com/"
+        <Link
+          href="/dash"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
@@ -26,7 +37,7 @@ function Navbar() {
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
             Gail Motor Dashboard
           </span>
-        </a>
+        </Link>
         <button
           onClick={toggleMobileMenu}
           type="button"
@@ -99,12 +110,12 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link
-                href="http://localhost:3001/"
+              <button
+                onClick={logout}
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
-                Login
-              </Link>
+                Logout
+              </button>
             </li>
           </ul>
         </div>

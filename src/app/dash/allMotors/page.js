@@ -11,6 +11,7 @@ const Page2 = () => {
 useEffect(() => {
   const fetchSubmissions = async () => {
     try {
+      const token = localStorage.getItem("authToken");
       const response = await fetch(
         "http://localhost:8000/api/motor/all-motor-ids",
         {
@@ -19,7 +20,7 @@ useEffect(() => {
           headers: {
             "Content-Type": "application/json",
             token:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTI4IiwiZXhwIjoxNzE0NzA0ODg5fQ.S4GbzSVZGjLd624XmjJHbOMKYYSM7QSjwRBBUfgwouM",
+              token,
           },
         }
       );

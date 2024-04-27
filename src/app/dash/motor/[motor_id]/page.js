@@ -9,8 +9,7 @@ import jsPDF from "jspdf";
 
 async function genpdf(motorId) {
   try {
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTI4IiwiZXhwIjoxNzEzMzE0NzU5fQ.jPcLcoZTXtxNZ6qx43ZV3mOWiGI_Fp0_RShAAFHqhrw"; // Replace with the actual JWT token
+    const token = localStorage.getItem("authToken");
 
     const response = await fetch(
       `http://localhost:8000/api/motor/report/${motorId}`,
@@ -46,7 +45,7 @@ export default function Healthcard() {
   const [motor_id, setmotor_id] = useState(params.motor_id);
   const [rows, setRows] = useState(null);
   const [statistics, setStatistics] = useState(null);
-  const [rul,setrul] = useState(123);
+  const [rul, setrul] = useState(123);
 
   // async function fetchRows() {
   //   try {
@@ -71,14 +70,14 @@ export default function Healthcard() {
 
   async function fetchRows(motorId) {
     try {
+      const token = localStorage.getItem("authToken");
       const response = await fetch(
         `http://localhost:8000/api/motor/motor-data/${motorId}`,
         {
           method: "GET",
           headers: {
             accept: "application/json",
-            token:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTI4IiwiZXhwIjoxNzE0NzA0ODg5fQ.S4GbzSVZGjLd624XmjJHbOMKYYSM7QSjwRBBUfgwouM",
+            token: token,
           },
         }
       );
@@ -94,12 +93,10 @@ export default function Healthcard() {
     }
   }
 
-
   useEffect(() => {
     console.log("motor_id: ", params.motor_id);
     fetchRows(params.motor_id);
   }, []);
-
 
   return (
     <div className="flex flex-col justify-around space-y-3">
