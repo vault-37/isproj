@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Gaillogo from "../../../public/gail.png";
+import Gaillogo from "../../../public/images/gail.png";
 import Image from "next/image";
 import Link from "next/link";
 
