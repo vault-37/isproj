@@ -46,10 +46,10 @@ useEffect(() => {
         {/* {isModalOpen && sub !== null && (
           <Modal closeModal={toggleModal} submission={sub} />
         )} */}
-        <h1 className="text-2xl font-bold mb-4">All Motors</h1>
+        <h1 className="text-2xl font-bold mb-4 mt-4">All Motors</h1>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-100%">
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+            <thead className="text-xs text-gray-700 uppercase bg-[#ffedd5] ">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Motor ID
@@ -101,7 +101,9 @@ useEffect(() => {
                       <Link
                         href={`./motor/${submission.motor_id}/`}
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        onClick={()=>router.push(`./motor/${submission.motor_id}/`)}
+                        onClick={() =>
+                          router.push(`./motor/${submission.motor_id}/`)
+                        }
                       >
                         Healthcard
                       </Link>

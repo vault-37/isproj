@@ -35,7 +35,7 @@ function MotorDropdown({ foo }) {
       {/* <label htmlFor="motorSelect">Select a motor:</label> */}
       <select
         id="motorSelect"
-        className="block bg-black text-white p-2 rounded-md"
+        className="block bg-[#ffedd5] text-gray-700 p-2 rounded-md"
         onChange={(e) => foo(e.target.value)}
       >
         <option value="">Select a motor...</option>
@@ -45,20 +45,17 @@ function MotorDropdown({ foo }) {
           </option>
         ))}
       </select>
-      <div className="w-full text-xl font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+      <div className="w-full text-xl font-medium text-gray-900 bg-[#ffedd5] border border-gray-200 rounded-lg">
         {motorList.length == 0 && (
-          
-            <ProgressBar
-              visible={true}
-              height="80"
-              width="80"
-              color="#4fa94d"
-              ariaLabel="progress-bar-loading"
-              wrapperStyle={{}}
-              wrapperClass="w-full flex justify-around"
-            />
-            
-          
+          <ProgressBar
+            visible={true}
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass="w-full flex justify-around"
+          />
         )}
         {motorList.map((motor) => (
           <button

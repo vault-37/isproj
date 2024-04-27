@@ -42,9 +42,9 @@ function AddMotorForm() {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 h-screen">
+    <section className="bg-white h-screen">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mb-4 text-xl font-bold text-gray-900">
           Add a new Motor
         </h2>
         <form onSubmit={handleSubmit}>
@@ -52,7 +52,7 @@ function AddMotorForm() {
             <div className="sm:col-span-2">
               <label
                 htmlFor="motorID"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Motor ID
               </label>
@@ -62,7 +62,7 @@ function AddMotorForm() {
                 id="motorID"
                 value={motorID}
                 onChange={(e) => setMotorID(e.target.value)}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                 placeholder="Type motor ID"
                 required
               />
@@ -70,7 +70,7 @@ function AddMotorForm() {
             <div className="w-full">
               <label
                 htmlFor="powerRating"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Power Rating
               </label>
@@ -80,7 +80,7 @@ function AddMotorForm() {
                 id="powerRating"
                 value={powerRating}
                 onChange={(e) => setPowerRating(e.target.value)}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                 placeholder="Motor power rating"
                 required
               />
@@ -88,7 +88,7 @@ function AddMotorForm() {
             <div className="w-full">
               <label
                 htmlFor="location"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Location
               </label>
@@ -98,7 +98,7 @@ function AddMotorForm() {
                 id="location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                 placeholder="Motor location"
                 required
               />
@@ -106,7 +106,7 @@ function AddMotorForm() {
           </div>
           <button
             type="submit"
-            className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
+            className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-primary-800"
           >
             Add Motor
           </button>
