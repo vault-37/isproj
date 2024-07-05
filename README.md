@@ -3,3 +3,5 @@
 > This is a test 2 note
 > [!NOTE]
 > This is a test 3 note
+> [!NOTE]
+> This is a test 4 note
